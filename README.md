@@ -1,6 +1,6 @@
 # 👋 Hi, I'm Diwan Roshan
 
-**Senior Software Engineer** | Angular | TypeScript | OTT Platforms | REST APIs
+**Senior Software Engineer** | Angular | TypeScript | OTT Platforms | REST API's
 
 📍 Hyderabad, India | 📧 diwanroshan2604@gmail.com | 📱 +91 8801833417
 
