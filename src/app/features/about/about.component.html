@@ -1,0 +1,85 @@
+<section id="about" class="section about" #aboutSection>
+  <div class="container">
+    <!-- Section Header -->
+    <div class="section-header">
+      <span class="section-label">About Me</span>
+      <h2 class="section-title">Get to Know Me</h2>
+      <p class="section-subtitle">
+        A passionate developer dedicated to creating exceptional digital experiences
+      </p>
+    </div>
+
+    <!-- About Content Grid -->
+    <div class="about-grid">
+      <!-- About Text -->
+      <div class="about-content">
+        <h3 class="about-heading">
+          I'm {{ personalInfo.name }}, a 
+          <span class="text-gradient">{{ personalInfo.title }}</span>
+        </h3>
+        
+        <div class="about-text">
+          <p *ngFor="let paragraph of personalInfo.bio.split('\n\n')">
+            {{ paragraph }}
+          </p>
+        </div>
+
+        <!-- Info Items -->
+        <div class="about-info">
+          <div class="info-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            <span>{{ personalInfo.location }}</span>
+          </div>
+          <div class="info-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            <a [href]="'mailto:' + personalInfo.email">{{ personalInfo.email }}</a>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="about-cta" *ngIf="false">
+          <a [href]="personalInfo.resumeUrl" target="_blank" class="btn btn-primary" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            <span>Download Resume</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- About Image -->
+      <div class="about-image-wrapper">
+        <div class="image-container">
+          <div class="image-border"></div>
+          <div class="image-glow"></div>
+          <img [src]="personalInfo.avatar" [alt]="personalInfo.name" class="about-image" onerror="this.style.display='none'">
+          <div class="image-placeholder" *ngIf="!personalInfo.avatar">
+            <span>{{ personalInfo.name.charAt(0) }}</span>
+          </div>
+        </div>
+        
+        <!-- Experience Badge -->
+        <div class="experience-badge">
+          <span class="badge-value">4.6+</span>
+          <span class="badge-label">Years of<br>Experience</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="about-stats">
+      <div class="stat-item" *ngFor="let stat of stats">
+        <span class="stat-value">{{ stat.value }}</span>
+        <span class="stat-label">{{ stat.label }}</span>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,236 @@
+.footer {
+  position: relative;
+  background: var(--color-surface);
+  border-top: 1px solid var(--border-color);
+  padding: 4rem 0 2rem;
+  margin-top: 4rem;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  
+  @media (min-width: 768px) {
+    padding: 0 3rem;
+  }
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+  
+  @media (min-width: 768px) {
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 4rem;
+  }
+}
+
+// Brand Section
+.footer-brand {
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+    
+    .logo-dot {
+      color: var(--color-primary);
+      font-size: 2rem;
+      line-height: 1;
+    }
+  }
+  
+  .brand-description {
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    max-width: 300px;
+  }
+}
+
+.social-links {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: var(--color-surface-light);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  color: var(--color-text-muted);
+  transition: all var(--transition-fast);
+  
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  &:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background: rgba(99, 102, 241, 0.1);
+    transform: translateY(-2px);
+  }
+}
+
+// Footer Links
+.footer-links {
+  .footer-heading {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 1.25rem;
+  }
+  
+  .links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    li {
+      margin-bottom: 0.75rem;
+    }
+    
+    a {
+      color: var(--color-text-muted);
+      text-decoration: none;
+      transition: all var(--transition-fast);
+      display: inline-block;
+      
+      &:hover {
+        color: var(--color-primary);
+        transform: translateX(4px);
+      }
+    }
+  }
+}
+
+// Contact Section
+.footer-contact {
+  .footer-heading {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 1.25rem;
+  }
+  
+  .contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      color: var(--color-text-muted);
+      
+      svg {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+        color: var(--color-primary);
+      }
+      
+      a {
+        color: var(--color-text-muted);
+        text-decoration: none;
+        transition: all var(--transition-fast);
+        
+        &:hover {
+          color: var(--color-primary);
+        }
+      }
+    }
+  }
+}
+
+// Footer Bottom
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+  
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+  
+  .copyright {
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+  }
+  
+  .built-with {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+    
+    .heart {
+      width: 16px;
+      height: 16px;
+      color: #ef4444;
+      animation: heartbeat 1.5s ease-in-out infinite;
+    }
+  }
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  background: var(--gradient-primary);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-glow);
+  transition: all var(--transition-fast);
+  z-index: 100;
+  
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 60px -10px rgba(99, 102, 241, 0.6);
+  }
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
